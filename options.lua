@@ -1,3 +1,11 @@
+local is_windows = vim.fn.has("win32")
+local shell
+if is_windows then
+  shell = "busybox.exe sh"
+else
+  shell = vim.env.SHELL
+end
+
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
@@ -7,7 +15,7 @@ return {
     spell = false,          -- sets vim.opt.spell
     signcolumn = "auto",    -- sets vim.opt.signcolumn to auto
     wrap = false,           -- sets vim.opt.wrap
-    shell = "busybox.exe sh",
+    shell = shell,
     shellcmdflag = "-c",
   },
   g = {
