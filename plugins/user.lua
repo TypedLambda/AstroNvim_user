@@ -37,18 +37,18 @@ return {
   {
     "maxmx03/solarized.nvim",
     config = function()
-      local _success, solarized = pcall(require, 'solarized')
+      local _, solarized = pcall(require, 'solarized')
 
-      vim.o.background = 'dark'
+      -- vim.o.background = 'dark'
+      --
+      -- solarized:setup {
+      --   config = {
+      --     theme = 'neovim',
+      --     transparent = false
+      --   }
+      -- }
 
-      solarized:setup {
-        config = {
-          theme = 'neovim',
-          transparent = false
-        }
-      }
-
-      vim.cmd 'colorscheme solarized'
+      -- vim.cmd 'colorscheme solarized'
     end
   },
 
